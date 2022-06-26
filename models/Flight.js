@@ -7,7 +7,7 @@ const flightSchema =  mongoose.Schema({
         type: String,
         required: true
     },
-    time: Number,
+    time: String,
 
     price: {
         type: Number,
@@ -15,7 +15,7 @@ const flightSchema =  mongoose.Schema({
     },
 
    
-    date: { type: Date, default: Date.now },
+    date: { type: String, default: Date.now },
   
 });
 
