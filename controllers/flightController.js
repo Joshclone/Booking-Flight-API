@@ -3,21 +3,17 @@ const Flight = require("../models/Flight");
 //Book a flight
 exports.bookFlight = (req, res) => {
     //validate
-    if (!req.body.content) {
-        return res.status(400).send({
-            message: "Booking content can not be empty"
-        });
-    }
+    
     //create a flight
-    const flght = new Flight({
+    const flight = new Flight({
         title: req.body.title || "Untitled Flight Plan",
         time: req.body.time,
         price: req.body.price,
-        date: req.body.date
+       date: req.body.date
     });
 
     //save into database
-    Flight.bulkSave()
+    flight.save()
         .then((data) => {
             res.send(data);
         })
